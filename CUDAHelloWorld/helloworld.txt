@@ -1,0 +1,9 @@
+The following steps will demonstrate the necessary understanding of the code:
+
+- The main idea of using GPU is that we want to run our sub-task functions in the GPU. To do that, the function should be declared as __global__; 
+this means that the declared function will always run on the GPUs.
+
+- And at the same time, it should be also called with threads <<<-,-,->>>, from the main program where it is being called. For example, 
+from the code example it should be defined as cuda_function<<<1,1>>>() from just as a c_function().
+
+- Above all, we also need to synchronize the calls (both threads and device calls). Otherwise, we will get the wrong solution in the computation. 
